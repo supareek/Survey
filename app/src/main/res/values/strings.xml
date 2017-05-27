@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">SummerTime Survey</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="question">Would you like an Opportunity to enjoy Free Of Cost...</string>
+    <string name="partyQuestion">Party with your family/ friends at  local or exotic foreign locations</string>
+    <string name="familyQuestion"><![CDATA[Enjoy your favourite activity with  your family &amp; friend?]]></string>
+    <string name="selfieQuestion">Would you like to be rewarded for taking selfies?</string>
+    <string name="travelQuestion">Do you like to travel?</string>
+    <string name="sportsQuestion">Do you like adventure sports?</string>
+    <string name="natureQuestion">Are you interested in wild life, nature?</string>
+    <string name="applicationQues">Which application you have on your cell phone</string>
+    <string name="favactivitiesQues">Which are your favourite activities…..</string>
+    <string name="moviewQues">Watching movies in theatre</string>
+    <string name="eatingout">Eating Out</string>
+    <string name="party">Clubbing/Party with friends/family</string>
+    <string name="vacation">How often do you go out for vacation with friends/ family</string>
+
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="age">
+        <item>12 to 17</item>
+        <item>18 to 26</item>
+        <item>27 to 39</item>
+        <item>40 to 49</item>
+        <item>50 onwards</item>
+    </string-array>
+
+    <string-array name="education">
+        <item>School</item>
+        <item>College</item>
+        <item>Post Graduates</item>
+    </string-array>
+
+    <string-array name="profession">
+        <item>Student</item>
+        <item>Service</item>
+        <item>Professional</item>
+        <item>Housewife</item>
+    </string-array>
+
+    <string-array name="location">
+        <item>Pune</item>
+        <item>PCMC</item>
+        <item>Mumbai</item>
+        <item>New Mumbai</item>
+        <item>Thane</item>
+        <item>Goa</item>
+        <item>Rest of India</item>
+        <item>Singapore</item>
+        <item>Other Countries</item>
+    </string-array>
+
+    <string-array name="movies_freq">
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Quarterly</item>
+        <item>Never</item>
+    </string-array>
+
+    <string-array name="eating_freq">
+        <item>1 or more times in a week</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Never</item>
+    </string-array>
+
+    <string-array name="party_freq">
+        <item>1 or more times in a week</item>
+        <item>Monthly</item>
+        <item>Quarterly</item>
+        <item>Never</item>
+    </string-array>
+
+    <string-array name="vacation_freq">
+        <item>Quarterly</item>
+        <item>Half Yearly</item>
+        <item>Yearly</item>
+        <item>Less than once a year</item>
+    </string-array>
+
+</resources>
