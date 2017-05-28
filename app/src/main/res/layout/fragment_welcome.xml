@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background"
+    tools:context="com.summertime.survey.fragments.WelcomeFragment">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginBottom="25dip"
+        android:layout_marginTop="15dip"
+        android:padding="5dip"
+        android:text="@string/welcome" />
+
+    <TextView
+        android:id="@+id/point1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginBottom="25dip"
+        android:layout_marginTop="15dip"
+        android:padding="5dip"
+        android:text="@string/point1" />
+
+
+    <TextView
+        android:id="@+id/point2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginBottom="25dip"
+        android:layout_marginTop="15dip"
+        android:padding="5dip"
+        android:text="@string/point2" />
+
+    <TextView
+        android:id="@+id/point3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginBottom="25dip"
+        android:layout_marginTop="15dip"
+        android:padding="5dip"
+        android:text="@string/point3" />
+
+    <TextView
+        android:id="@+id/point4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginBottom="25dip"
+        android:layout_marginTop="15dip"
+        android:padding="5dip"
+        android:text="@string/point4" />
+
+    <Button
+        android:id="@+id/takeSurvey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:layout_margin="20dp"
+        android:text="Take the Survey"/>
+
+</LinearLayout>

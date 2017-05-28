@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SummerTime Survey</string>
+    <string name="app_name">Summertime Survey</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -16,14 +16,21 @@
     <string name="eatingout">Eating Out</string>
     <string name="party">Clubbing/Party with friends/family</string>
     <string name="vacation">How often do you go out for vacation with friends/ family</string>
+    <string name="welcome">Welcome to the Survey</string>
+    <string name="point1">1. In order to be eligible for lucky draw one must complete the entire survey.</string>
+    <string name="point2">2. 10 lucky winners will receive invitation to launch party of our app in their respective city.</string>
+    <string name="point3">3.    1 lucky winner gets to party with 2 friends in GOA over weekend “ALL EXPENSES PAID”</string>
+    <string name="point4">4.    Winners shall be contacted by e-mail ids or phone</string>
 
     <string-array name="gender">
+        <item>Select</item>
         <item>Male</item>
         <item>Female</item>
         <item>Others</item>
     </string-array>
 
     <string-array name="age">
+        <item>Select</item>
         <item>12 to 17</item>
         <item>18 to 26</item>
         <item>27 to 39</item>
@@ -32,12 +39,14 @@
     </string-array>
 
     <string-array name="education">
+        <item>Select</item>
         <item>School</item>
         <item>College</item>
         <item>Post Graduates</item>
     </string-array>
 
     <string-array name="profession">
+        <item>Select</item>
         <item>Student</item>
         <item>Service</item>
         <item>Professional</item>
@@ -45,6 +54,7 @@
     </string-array>
 
     <string-array name="location">
+        <item>Select</item>
         <item>Pune</item>
         <item>PCMC</item>
         <item>Mumbai</item>
@@ -57,6 +67,7 @@
     </string-array>
 
     <string-array name="movies_freq">
+        <item>Select</item>
         <item>Weekly</item>
         <item>Monthly</item>
         <item>Quarterly</item>
@@ -64,6 +75,7 @@
     </string-array>
 
     <string-array name="eating_freq">
+        <item>Select</item>
         <item>1 or more times in a week</item>
         <item>Weekly</item>
         <item>Monthly</item>
@@ -71,6 +83,7 @@
     </string-array>
 
     <string-array name="party_freq">
+        <item>Select</item>
         <item>1 or more times in a week</item>
         <item>Monthly</item>
         <item>Quarterly</item>
@@ -78,6 +91,7 @@
     </string-array>
 
     <string-array name="vacation_freq">
+        <item>Select</item>
         <item>Quarterly</item>
         <item>Half Yearly</item>
         <item>Yearly</item>

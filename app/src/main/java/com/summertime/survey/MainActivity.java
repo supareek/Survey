@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
@@ -11,6 +12,7 @@ import com.summertime.survey.fragments.FavActivitiesFragment;
 import com.summertime.survey.fragments.InstalledApplicationFragment;
 import com.summertime.survey.fragments.OpportunityFragment;
 import com.summertime.survey.fragments.PersonalInfoFragment;
+import com.summertime.survey.fragments.WelcomeFragment;
 import com.summertime.survey.fragments.YesNoInfoFragment;
 
 import butterknife.BindView;
@@ -27,7 +29,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         ButterKnife.bind(this);
+
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.add(R.id.frame,new WelcomeFragment(),"Main");
+        transaction.addToBackStack(null);
+        transaction.commit();
+
+    }
+
+    public void initPager() {
+
+
+        getSupportFragmentManager().beginTransaction().
+                remove(getSupportFragmentManager().findFragmentById(R.id.frame)).commit();
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(adapterViewPager);
 
