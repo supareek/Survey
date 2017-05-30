@@ -39,6 +39,7 @@ public class WelcomeFragment extends Fragment {
 
         ButterKnife.bind(this,view);
 
+
         point.setAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.flash));
 
         return view;

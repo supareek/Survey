@@ -14,10 +14,12 @@
         android:textSize="15dp"
         android:textStyle="bold"
         android:layout_marginTop="20dip"
+        android:textColor="@android:color/black"
         android:padding="5dip"
         android:text="@string/selfieQuestion" />
 
-    <include layout="@layout/radio_layout" />
+    <include layout="@layout/radio_layout"
+        android:id="@+id/radio1"/>
 
 
     <TextView
@@ -27,10 +29,12 @@
         android:textSize="15dp"
         android:textStyle="bold"
         android:layout_marginTop="20dip"
+        android:textColor="@android:color/black"
         android:padding="5dip"
         android:text="@string/travelQuestion" />
 
-    <include layout="@layout/radio_layout" />
+    <include layout="@layout/radio_layout"
+        android:id="@+id/radio2"/>
 
     <TextView
         android:id="@+id/question3"
@@ -38,11 +42,13 @@
         android:layout_height="wrap_content"
         android:textSize="15dp"
         android:textStyle="bold"
+        android:textColor="@android:color/black"
         android:layout_marginTop="20dip"
         android:padding="5dip"
         android:text="@string/sportsQuestion" />
 
-    <include layout="@layout/radio_layout" />
+    <include layout="@layout/radio_layout"
+        android:id="@+id/radio3"/>
 
 
     <TextView
@@ -51,10 +57,12 @@
         android:layout_height="wrap_content"
         android:textSize="15dp"
         android:textStyle="bold"
+        android:textColor="@android:color/black"
         android:layout_marginTop="20dip"
         android:padding="5dip"
         android:text="@string/natureQuestion" />
 
-    <include layout="@layout/radio_layout" />
+    <include layout="@layout/radio_layout"
+        android:id="@+id/radio4"/>
 
 </LinearLayout>

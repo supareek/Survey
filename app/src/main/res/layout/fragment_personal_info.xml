@@ -15,6 +15,7 @@
         android:weightSum="3">
 
         <TextView
+            android:id="@+id/nameText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Name"
@@ -41,6 +42,7 @@
         android:weightSum="3">
 
         <TextView
+            android:id="@+id/emailText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Email Id"
@@ -54,6 +56,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:inputType="textEmailAddress"
             android:imeOptions="actionDone"
             />
 
@@ -67,6 +70,7 @@
         android:weightSum="3">
 
         <TextView
+            android:id="@+id/mobileText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Mobile No"
@@ -80,6 +84,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:inputType="number"
             android:imeOptions="actionDone"
             />
 
@@ -93,6 +98,7 @@
         android:weightSum="3">
 
         <TextView
+            android:id="@+id/genderText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Gender"
@@ -121,6 +127,7 @@
         android:weightSum="3">
 
         <TextView
+            android:id="@+id/ageText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Age"
@@ -148,6 +155,7 @@
         android:weightSum="3">
 
         <TextView
+            android:id="@+id/educationText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Education"
@@ -175,6 +183,7 @@
         android:weightSum="3">
 
         <TextView
+            android:id="@+id/profText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Profession"
@@ -202,6 +211,7 @@
         android:weightSum="3">
 
         <TextView
+            android:id="@+id/locationText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Location"

@@ -13,6 +13,7 @@
         android:textStyle="bold"
         android:textAlignment="center"
         android:layout_marginBottom="15dip"
+        android:textColor="@android:color/black"
         android:layout_marginTop="15dip"
         android:padding="5dip"
         android:text="@string/applicationQues" />

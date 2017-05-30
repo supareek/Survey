@@ -6,27 +6,17 @@
     android:background="@drawable/gradient_background"
     tools:context="com.summertime.survey.fragments.WelcomeFragment">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:layout_marginBottom="25dip"
-        android:layout_marginTop="15dip"
-        android:padding="5dip"
-        android:text="@string/welcome" />
 
     <TextView
         android:id="@+id/point1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="18dp"
         android:textStyle="bold"
         android:textAlignment="center"
         android:layout_marginBottom="25dip"
         android:layout_marginTop="15dip"
+        android:textColor="@android:color/holo_blue_dark"
         android:padding="5dip"
         android:text="@string/point1" />
 
@@ -40,6 +30,7 @@
         android:textAlignment="center"
         android:layout_marginBottom="25dip"
         android:layout_marginTop="15dip"
+        android:textColor="@android:color/black"
         android:padding="5dip"
         android:text="@string/point2" />
 
@@ -51,6 +42,7 @@
         android:textStyle="bold"
         android:textAlignment="center"
         android:layout_marginBottom="25dip"
+        android:textColor="@android:color/black"
         android:layout_marginTop="15dip"
         android:padding="5dip"
         android:text="@string/point3" />
@@ -64,6 +56,7 @@
         android:textAlignment="center"
         android:layout_marginBottom="25dip"
         android:layout_marginTop="15dip"
+        android:textColor="@android:color/black"
         android:padding="5dip"
         android:text="@string/point4" />
 

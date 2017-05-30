@@ -15,6 +15,7 @@
         android:textStyle="bold"
         android:textAlignment="center"
         android:layout_marginBottom="25dip"
+        android:textColor="@android:color/black"
         android:layout_marginTop="15dip"
         android:padding="5dip"
         android:text="@string/favactivitiesQues" />
@@ -118,7 +119,7 @@
             android:textColor="@android:color/black"/>
 
         <Spinner
-            android:id="@+id/location"
+            android:id="@+id/vacation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:drawSelectorOnTop="true"
@@ -127,5 +128,7 @@
             />
 
     </LinearLayout>
+
+
 
 </LinearLayout>
