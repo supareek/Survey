@@ -11,7 +11,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.widget.Toast;
 
 import com.summertime.survey.fragments.FavActivitiesFragment;
 import com.summertime.survey.fragments.InstalledApplicationFragment;
@@ -21,8 +21,13 @@ import com.summertime.survey.fragments.ThankyouFragment;
 import com.summertime.survey.fragments.WelcomeFragment;
 import com.summertime.survey.fragments.YesNoInfoFragment;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import au.com.bytecode.opencsv.CSVWriter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -33,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     private MyPagerAdapter adapterViewPager;
+    private List<String> personalInfo;
+    private List<String> favactivities;
+    private List<String> opportunityList;
+    private List<String> installedApp;
+    private List<String> yesNoList;
+
+    private List<String> mList;
+    private FileWriter mFileWriter;
+
+    String newline = System.getProperty("line.separator");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             askPermissions();
         }
 
+        initList();
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.add(R.id.frame,new WelcomeFragment(),"Main");
@@ -75,6 +91,11 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         break;
                     case 2:
+                        b= ((InstalledApplicationFragment) fragment).validate();
+                        if(!b) {
+                            Toast.makeText(getApplicationContext(),"Please select one!", Toast.LENGTH_SHORT).show();
+                            mViewPager.setCurrentItem(position);
+                        }
                         break;
                     case 3:
                         break;
@@ -90,43 +111,23 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 1:
                         Fragment fragment = (Fragment) adapterViewPager.instantiateItem(mViewPager, 0);
-                        try {
-                            ((PersonalInfoFragment) fragment).writeToCSV();
-                        } catch (IOException e) {
-                            Log.e("TAG", e.getMessage(), e);
-                        }
+                        ((PersonalInfoFragment) fragment).writeToCSV();
                         break;
                     case 2:
                         fragment = (Fragment) adapterViewPager.instantiateItem(mViewPager, 1);
-                        try {
-                            ((OpportunityFragment) fragment).writeToFile();
-                        } catch (IOException e) {
-                            Log.e("TAG", e.getMessage(), e);
-                        }
+                        ((OpportunityFragment) fragment).writeToFile();
                         break;
                     case 3:
                         fragment = (Fragment) adapterViewPager.instantiateItem(mViewPager, 2);
-                        try {
-                            ((InstalledApplicationFragment) fragment).writeToFile();
-                        } catch (IOException e) {
-                            Log.e("TAG", e.getMessage(), e);
-                        }
+                        ((InstalledApplicationFragment) fragment).writeToFile();
                         break;
                     case 4:
                         fragment = (Fragment) adapterViewPager.instantiateItem(mViewPager, 3);
-                        try {
-                            ((FavActivitiesFragment) fragment).writeToFile();
-                        } catch (IOException e) {
-                            Log.e("TAG", e.getMessage(), e);
-                        }
+                        ((FavActivitiesFragment) fragment).writeToFile();
                         break;
                     case 5:
                         fragment = (Fragment) adapterViewPager.instantiateItem(mViewPager, 4);
-                        try {
-                            ((YesNoInfoFragment) fragment).writeToFile();
-                        } catch (IOException e) {
-                            Log.e("TAG", e.getMessage(), e);
-                        }
+                        ((YesNoInfoFragment) fragment).writeToFile();
                         break;
 
                 }
@@ -141,6 +142,96 @@ public class MainActivity extends AppCompatActivity {
 
     protected boolean shouldAskPermissions() {
         return (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1);
+    }
+
+    public void initList(){
+        mList = new ArrayList<>();
+    }
+
+    public void addToList(String[] data){
+        for(String str : data){
+            mList.add(str);
+        }
+    }
+
+    public void setPersonalInfo(String[] data) {
+        this.personalInfo = new ArrayList<>();
+        for(String str : data){
+            this.personalInfo.add(str);
+        }
+    }
+
+    public void setFavactivities(String[] data) {
+        this.favactivities = new ArrayList<>();
+        for(String str : data){
+            this.favactivities.add(str);
+        }
+    }
+
+    public void setOpportunityList(String[] data) {
+        this.opportunityList = new ArrayList<>();
+        for(String str : data){
+            this.opportunityList.add(str);
+        }
+    }
+
+    public void setInstalledApp(String[] data) {
+        this.installedApp = new ArrayList<>();
+        for(String str : data){
+            this.installedApp.add(str);
+        }
+    }
+
+    public void setYesNoList(String[] data) {
+        this.yesNoList = new ArrayList<>();
+        for(String str : data){
+            this.yesNoList.add(str);
+        }
+    }
+
+    public List<String> getList(){
+        for(String str : personalInfo){
+            mList.add(str);
+        }
+        for(String str : opportunityList){
+            mList.add(str);
+        }
+        for(String str : installedApp){
+            mList.add(str);
+        }
+        for(String str : favactivities){
+            mList.add(str);
+        }
+        for(String str : yesNoList){
+            mList.add(str);
+        }
+        return mList;
+    }
+
+    public void writeToFile() throws IOException {
+        String baseDir = android.os.Environment.getExternalStorageDirectory().getAbsolutePath();
+        String fileName = "summertime.csv";
+        String filePath = baseDir + File.separator + fileName;
+        File f = new File(filePath );
+        CSVWriter writer;
+        // File exist
+        if(f.exists() && !f.isDirectory()){
+            mFileWriter = new FileWriter(filePath , true);
+            writer = new CSVWriter(mFileWriter);
+        }
+        else {
+            writer = new CSVWriter(new FileWriter(filePath));
+        }
+
+        getList();
+        String[] data = new String[mList.size()];
+        for(int i= 0 ; i < mList.size(); i++){
+            data[i] = mList.get(i);
+        }
+        writer.writeNext(data);
+        writer.writeNext(new String[]{newline});
+
+        writer.close();
     }
 
     @TargetApi(23)

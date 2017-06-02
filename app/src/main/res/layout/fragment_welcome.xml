@@ -11,12 +11,12 @@
         android:id="@+id/point1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:textSize="27sp"
         android:textStyle="bold"
         android:textAlignment="center"
         android:layout_marginBottom="25dip"
         android:layout_marginTop="15dip"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@android:color/black"
         android:padding="5dip"
         android:text="@string/point1" />
 

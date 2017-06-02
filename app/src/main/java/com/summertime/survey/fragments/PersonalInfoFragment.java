@@ -3,6 +3,7 @@ package com.summertime.survey.fragments;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -15,11 +16,8 @@ import android.widget.TextView;
 import com.summertime.survey.MainActivity;
 import com.summertime.survey.R;
 
-import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 
-import au.com.bytecode.opencsv.CSVWriter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -64,6 +62,13 @@ public class PersonalInfoFragment extends Fragment {
 
     public PersonalInfoFragment() {
         // Required empty public constructor
+    }
+
+    private MainActivity mActivity;
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mActivity = (MainActivity) getActivity();
     }
 
     @Override
@@ -130,22 +135,7 @@ public class PersonalInfoFragment extends Fragment {
         return true;
     }
 
-    public void writeToCSV() throws IOException {
-
-        String baseDir = android.os.Environment.getExternalStorageDirectory().getAbsolutePath();
-        String fileName = "summertime.csv";
-        saveFileName(fileName);
-        String filePath = baseDir + File.separator + fileName;
-        File f = new File(filePath );
-        CSVWriter writer;
-        // File exist
-        if(f.exists() && !f.isDirectory()){
-            mFileWriter = new FileWriter(filePath , true);
-            writer = new CSVWriter(mFileWriter);
-        }
-        else {
-            writer = new CSVWriter(new FileWriter(filePath));
-        }
+    public void writeToCSV() {
 
         String[] data = {nameEdit.getText().toString(),
                 email.getText().toString(),
@@ -156,9 +146,8 @@ public class PersonalInfoFragment extends Fragment {
                 profession.getSelectedItem().toString(),
                 location.getSelectedItem().toString()};
 
-        writer.writeNext(data);
+        mActivity.setPersonalInfo(data);
 
-        writer.close();
 
     }
 
